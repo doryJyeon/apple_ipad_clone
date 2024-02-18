@@ -1,0 +1,278 @@
+$bg-black: #3a3a3a;
+$font-white: #f5f5f5;
+
+%flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+%flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+%absolute-left-zero {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+%absolute-right-zero {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+/* style ========================== */
+html.fixed {
+  position: fixed;
+  overflow-y: scroll;
+  width: 100%;
+}
+
+body {
+  font-size: 16px;
+  line-height: 1;
+  color: #1d1d1d;
+}
+
+header {
+  background-color: $bg-black;
+
+  > .inner {
+    max-width: 1020px;
+    margin: 0 auto;
+
+    /* MENU */
+    > .menu {
+      height: 44px;
+      @extend %flex-between;
+
+      > li {
+        display: flex;
+        height: 44px;
+        position: relative;
+        transition: .4s;
+
+        a {
+          padding: 0 10px;
+          font-size: 11px;
+          @extend %flex-center;
+          color: $font-white;
+          opacity: .8;
+        }
+        a:hover {
+          opacity: 1;
+        }
+      }
+
+      > li.apple-logo > a,
+      > li.search-starter > a,
+      > li.basket-starter > a {
+        width: 14px;
+        text-indent: -9999px;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+      > li.apple-logo > a {
+        background-image: url("/images/header_apple.svg");
+      }
+      > li.search-starter > a {
+        background-image: url("/images/header_search.svg");
+      }
+      > li.basket-starter {
+        
+        > a {
+          background-image: url("/images/header_bag.svg");
+        }
+
+        /* BASKET */
+        .basket {
+          width: 290px;
+          padding: 10px 20px;
+          border: 1px solid #d2d2d2;
+          border-radius: 10px;
+          box-sizing: border-box;
+          background-color:  #fff;
+          position: absolute;
+          top: calc(100% + 4px);
+          right: -6px;
+          visibility: hidden;
+          transition: .4s;
+          opacity: 0;
+
+          .arrow {
+            width: 20px;
+            height: 10px;
+            position: absolute;
+            overflow: hidden;
+            top: -10px;
+            right: 12px;
+          }
+          .arrow::before {
+            content: "";
+            width: 12px;
+            height: 12px;
+            border: 1px solid #d2d2d2;
+            background-color: #fff;
+            transform: rotate(45deg);
+            transform-origin: 0 0;
+            position: absolute;
+            top: 0;
+            left: 50%;
+          }
+          
+          .message {
+            padding: 30px 0;
+            font-size: 13px;
+            color: #6e6e6e;
+            text-align: center;
+          }
+
+          > ul {
+            margin-top: 10px;
+            
+            > li {
+              border-top: 1px solid #d2d2d2;
+
+              a {
+                display: block;
+                padding: 14px;
+                font-size: 13px;
+                color: #0071e3;
+              }
+              a:hover {
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+        .basket.show {
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+    }
+
+    /* SEARCH */
+    .search-wrap {
+      @extend %absolute-left-zero;
+      width: 100%;
+      visibility: hidden;
+      opacity: 0;
+      transition: .4s;
+
+      .search {
+        max-width: 680px;
+        margin: 0 auto;
+        position: relative;
+
+        .shadow {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0,0,0,.4);
+        }
+
+        .textfield {
+          position: relative;
+
+          > input {
+            width: 100%;
+            height: 44px;
+            padding: 0 40px;
+            border: none;
+            outline: none;
+            box-sizing: border-box;
+            background-color: transparent;
+            font-size: 17px;
+            color: #fff;
+          }
+
+          .search-icon {
+            width: 40px;
+            height: 44px;
+            background-image: url("/images/header_search.svg");
+            background-repeat: no-repeat;
+            background-position: center;
+            @extend %absolute-left-zero;
+            opacity: .4;
+          }
+
+          .search-closer {
+            width: 40px;
+            height: 44px;
+            background-image: url("/images/header_close.svg");
+            background-repeat: no-repeat;
+            background-position: center;
+            @extend %absolute-right-zero;
+            opacity: .4;
+            cursor: pointer;
+          }
+          .search-closer:hover {
+            opacity: 1;
+          }
+        }
+
+        .autocompletes {
+          width: 100%;
+          padding: 26px 40px 20px;
+          border-radius: 0 0 18px 18px;
+          box-sizing: border-box;
+          background-color: #fff;
+          position: absolute;
+          top: 44px;
+          left: 0;
+
+          > h3 {
+            font-size: 12px;
+            color: #6e6e6e;
+            margin-bottom: 12px;
+          }
+
+          > ul {
+            > li {
+              > a {
+                display: block;
+                margin: 0 -14px;
+                padding: 10px 0 10px 30px;
+                font-size: 14px;
+                cursor: pointer;
+              }
+              > a:hover {
+                background-color: #f5f5f5;
+                color: #0071e3;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+header .search {
+  input, .search-icon, 
+  .autocompletes h3, .autocompletes li {
+    transition: .6s;
+    transform: translate(100px, 0);
+  }
+}
+/* SEARCHING */
+header.searching .search {
+  input, .search-icon, 
+  .autocompletes h3, .autocompletes li {
+    transition-delay: .2s;
+    transform: translate(0, 0);
+  }
+}
+header.searching ul.menu > li {
+  transform: scale(.7);
+  opacity: 0;
+}
+header.searching .search-wrap {
+  visibility: visible;
+  opacity: 1;
+  transition-delay: .2s;
+}
