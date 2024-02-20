@@ -1,8 +1,14 @@
+import navigations from "/data/navigations.js";
+
 const headerEl = document.querySelector("header");
 const basketEl = document.querySelector("header .basket");
 const headerMenuEls = [...headerEl.querySelectorAll("ul.menu > li")];
 const searchDelayEls = [...document.querySelectorAll(".search-wrap li")];
 const searchInputEl = document.querySelector("header .search input");
+const video = document.querySelector(".stage video");
+
+// footer year
+document.querySelector("span.this-year").textContent = new Date().getFullYear();
 
 window.addEventListener("click", (e) => {
   event.stopPropagation();
@@ -16,13 +22,21 @@ window.addEventListener("click", (e) => {
 
   // 검색 toggle 
   if(targetId === "searchStarter") {
-    return toggleSearch(false);
+    toggleSearch(false);
   } else if(targetClass === "search-closer" || targetClass === "shadow") {
-    return toggleSearch(true);
+    toggleSearch(true);
+  }
+  
+  // video play controll
+  if(targetClass === "controller--play" || targetClass === "controller--play--icon") {
+    playVideo(true);
+  } else if(targetClass === "controller--pause" || targetClass === "controller--pause--icon") {
+    playVideo(false);
   }
 
   // 장바구니 hide
   toggleBasket(true);
+
 });
 
 // 장바구니 toggle
@@ -68,6 +82,19 @@ function toggleSearchMenu(show) {
   }
 }
 
+// video play controll
+function playVideo(play) {
+  if(play) {
+    video.play();
+    document.querySelector(".stage .controller--play").classList.add("hide");
+    document.querySelector(".stage .controller--pause").classList.remove("hide");
+  } else {
+    video.pause();
+    document.querySelector(".stage .controller--play").classList.remove("hide");
+    document.querySelector(".stage .controller--pause").classList.add("hide");
+  }
+}
+
 // 요소의 가시성 관찰
 // icon show
 const io = new IntersectionObserver((entries) => {
@@ -81,4 +108,30 @@ const io = new IntersectionObserver((entries) => {
 const infoEls = document.querySelectorAll(".info");
 infoEls.forEach((el) => {
   io.observe(el);
+});
+
+
+// ---------- get Data
+// navigations
+const navigationsEl = document.querySelector("footer .navigations");
+navigations.forEach((nav) => {
+  const mapEl = document.createElement("div");
+  mapEl.classList.add("map");
+  
+  let mapList = "";
+  nav.maps.forEach((list) => {
+    mapList += `<li><a href="${list.url}">${list.name}</a></li>`;
+  }); 
+
+  // HTML
+  mapEl.innerHTML = `
+    <h3>
+      <span class="text">${nav.title}</span>
+    </h3>
+    <ul>
+      ${mapList}
+    </ul>
+  `
+
+  navigationsEl.append(mapEl);
 });
