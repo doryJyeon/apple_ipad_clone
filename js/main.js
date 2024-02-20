@@ -67,3 +67,18 @@ function toggleSearchMenu(show) {
     }, 600);
   }
 }
+
+// 요소의 가시성 관찰
+// icon show
+const io = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if(!entry.isIntersecting) {
+      return entry.target.classList.remove("show");
+    }
+    entry.target.classList.add("show");
+  });
+});
+const infoEls = document.querySelectorAll(".info");
+infoEls.forEach((el) => {
+  io.observe(el);
+});
