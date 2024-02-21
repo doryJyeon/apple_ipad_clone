@@ -1187,7 +1187,71 @@ main {
 }
 
 
-/* 38강 */
+/* COMPARE */
+.compare {
+  padding: 20px 20px 0;
+  background-color: $color-section;
+  text-align: center;
+
+  .items {
+    display: flex;
+    justify-content: space-around;
+    max-width: 940px;
+    margin: 68px auto 74px;
+
+    .item {
+      width: 190px;
+      padding-bottom: 34px;
+      border-bottom: 1px solid $color-border;
+
+      .thumbnail {
+        height: 214px;
+        margin-bottom: 22px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+      }
+
+      ul.colors {
+        margin-bottom: 30px;
+        display: flex;
+        justify-content: center;
+        gap: 6px;
+
+        li {
+          width: 12px;
+          height: 12px;
+          border-radius: 50%;
+          background-color: $color-lightgray;
+          box-shadow: #00000010;
+        }
+      }
+
+      h3.name {
+        margin-bottom: 4px;
+        font-size: 22px;
+      }
+
+      .tagline {
+        margin-bottom: 20px;
+        font-size: 16px;
+      }
+
+      .price {
+        margin-bottom: 10px;
+        font-size: 14px;
+      }
+
+      .btn {
+        margin: 0 auto 14px;
+      }
+
+      a.link {
+        font-size: 14px;
+      }
+    }
+  }
+}
 
 
 /* FOOTER */

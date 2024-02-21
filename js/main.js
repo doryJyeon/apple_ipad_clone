@@ -1,3 +1,4 @@
+import ipads from "/data/ipads.js";
 import navigations from "/data/navigations.js";
 
 const headerEl = document.querySelector("header");
@@ -112,6 +113,36 @@ infoEls.forEach((el) => {
 
 
 // ---------- get Data
+// iPad 
+const itemsEl = document.querySelector("section.compare .items");
+console.log(ipads)
+ipads.forEach((ipad) => {
+  const itemEl = document.createElement("div");
+  itemEl.classList.add("item");
+
+  let colorList = "";
+  ipad.colors.forEach((color) => {
+    colorList += `<li style="background-color: ${color}"></li>`;
+  }); 
+
+  // HTML
+  itemEl.innerHTML = `
+    <div class="thumbnail">
+      <img src="${ipad.thumbnail}" alt="${ipad.name}" />
+    </div>
+    <ul class="colors">
+      ${colorList}
+    </ul>
+    <h3 class="name">${ipad.name}</h3>
+    <p class="tagline">${ipad.tagline}</p>
+    <p class="price">₩ ${ipad.price.toLocaleString("en-US")}부터</p>
+    <button class="btn">구입하기</button>
+    <a href="${ipad.url}" class="link">더 알아보기</a>
+  `;
+
+  itemsEl.append(itemEl);
+});
+
 // navigations
 const navigationsEl = document.querySelector("footer .navigations");
 navigations.forEach((nav) => {
