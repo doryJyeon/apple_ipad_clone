@@ -3,6 +3,7 @@ import navigations from "/data/navigations.js";
 
 const headerEl = document.querySelector("header");
 const basketEl = document.querySelector("header .basket");
+const navEl = document.querySelector("nav");
 const headerMenuEls = [...headerEl.querySelectorAll("ul.menu > li")];
 const searchDelayEls = [...document.querySelectorAll(".search-wrap li")];
 const searchInputEl = document.querySelector("header .search input");
@@ -21,12 +22,35 @@ window.addEventListener("click", (e) => {
     return toggleBasket(basketEl.classList.contains("show"));
   }
 
+  // 장바구니 hide
+  toggleBasket(true);
+
+  // mobile header toggle
+  if(targetClass === "menu-s") {
+    toggleHeader(headerEl.classList.contains("menuing"));
+  }
+
   // 검색 toggle 
   if(targetId === "searchStarter") {
     toggleSearch(false);
   } else if(targetClass === "search-closer" || targetClass === "shadow") {
     toggleSearch(true);
   }
+
+  // mobile 검색 cancel
+  if(targetClass === "m-search") {
+    toggleSearchCancel(false);
+  } else if(targetClass === "search-canceler") {
+    toggleSearchCancel(true);
+  }
+
+  // mobile nav
+  if(targetClass === "menu-toggler") {
+    navEl.classList.contains("menuing") ? navEl.classList.remove("menuing") : navEl.classList.add("menuing");
+  } else if(targetClass === "shadow") {
+    navEl.classList.remove("menuing");
+  }
+
   
   // video play controll
   if(targetClass === "controller--play" || targetClass === "controller--play--icon") {
@@ -35,9 +59,11 @@ window.addEventListener("click", (e) => {
     playVideo(false);
   }
 
-  // 장바구니 hide
-  toggleBasket(true);
+});
 
+// window size변경
+window.addEventListener("resize",() => {
+  window.innerWidth <= 740 ? headerEl.classList.remove("searching") : headerEl.classList.remove("searching--mobile");
 });
 
 // 장바구니 toggle
@@ -45,15 +71,27 @@ function toggleBasket(show) {
   show ? basketEl.classList.remove("show") : basketEl.classList.add("show");
 }
 
+// mobile header toggle
+function toggleHeader(show) {
+  if(show) {
+    headerEl.classList.remove("menuing");
+    playScroll(true);
+    searchInputEl.value = "";
+  } else {
+    headerEl.classList.add("menuing");
+    playScroll(false);
+  }
+}
+
 // 검색 toggle
 function toggleSearch(show) {
   if(show) {
     headerEl.classList.remove("searching");
-    document.documentElement.classList.remove("fixed");
+    playScroll(true);
     toggleSearchMenu(show);
   } else {
     headerEl.classList.add("searching");
-    document.documentElement.classList.add("fixed");
+    playScroll(false);
     toggleSearchMenu(show);
   }
 }
@@ -81,6 +119,16 @@ function toggleSearchMenu(show) {
       searchInputEl.focus();
     }, 600);
   }
+}
+
+// mobile 검색 cancel
+function toggleSearchCancel(cancel) {
+  cancel ? headerEl.classList.remove("searching--mobile") : headerEl.classList.add("searching--mobile");
+}
+
+// scroll controll
+function playScroll(scroll) {
+  scroll? document.documentElement.classList.remove("fixed") : document.documentElement.classList.add("fixed");
 }
 
 // video play controll
@@ -115,7 +163,6 @@ infoEls.forEach((el) => {
 // ---------- get Data
 // iPad 
 const itemsEl = document.querySelector("section.compare .items");
-console.log(ipads)
 ipads.forEach((ipad) => {
   const itemEl = document.createElement("div");
   itemEl.classList.add("item");
