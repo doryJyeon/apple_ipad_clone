@@ -205,6 +205,7 @@ navigations.forEach((nav) => {
   mapEl.innerHTML = `
     <h3>
       <span class="text">${nav.title}</span>
+      <span class="icon">+</span>
     </h3>
     <ul>
       ${mapList}
@@ -212,4 +213,13 @@ navigations.forEach((nav) => {
   `
 
   navigationsEl.append(mapEl);
+});
+
+// mobile footer navigation map
+const footerMapEls = document.querySelectorAll("footer .navigations .map");
+footerMapEls.forEach((el) => {
+  const h3El = el.querySelector("h3");
+  h3El.addEventListener("click", () => {
+    el.classList.toggle("active");
+  });
 });
