@@ -36,6 +36,7 @@ body {
   font-size: 16px;
   line-height: 1;
   color: $color-font;
+  overflow-x: hidden;
 }
 
 a {
@@ -279,15 +280,15 @@ header {
         background-position: center;
       }
       > li.apple-logo > a {
-        background-image: url("/images/header_apple.svg");
+        background-image: url("./../images/header_apple.svg");
       }
       > li.search-starter > a {
-        background-image: url("/images/header_search.svg");
+        background-image: url("./../images/header_search.svg");
       }
       > li.basket-starter {
         
         > a {
-          background-image: url("/images/header_bag.svg");
+          background-image: url("./../images/header_bag.svg");
         }
 
         /* BASKET */
@@ -398,7 +399,7 @@ header {
           .search-icon {
             width: 40px;
             height: $h-height;
-            background-image: url("/images/header_search.svg");
+            background-image: url("./../images/header_search.svg");
             background-repeat: no-repeat;
             background-position: center;
             @extend %absolute-left-zero;
@@ -408,7 +409,7 @@ header {
           .search-closer {
             width: 40px;
             height: $h-height;
-            background-image: url("/images/header_close.svg");
+            background-image: url("./../images/header_close.svg");
             background-repeat: no-repeat;
             background-position: center;
             position: absolute;
@@ -556,7 +557,7 @@ main {
     > h1 {
       width: 221px;
       height: 91px;
-      background-image: url("/images/hero_ipad_text.png");
+      background-image: url("./../images/hero_ipad_text.png");
       position: absolute;
       transform: translate(624px, 235px);
       z-index: 2;
@@ -570,21 +571,21 @@ main {
         .caption-camera {
           width: 120px;
           height: 84px;
-          background-image: url("/images/hero_ipad_caption_camera.png");
+          background-image: url("./../images/hero_ipad_caption_camera.png");
           transform: translate(43px, 580px);
         }
 
         .caption-chip {
           width: 95px;
           height: 43px;
-          background-image: url("/images/hero_ipad_caption_chip.png");
+          background-image: url("./../images/hero_ipad_caption_chip.png");
           transform: translate(589px, 510px);
         }
 
         .caption-storage {
           width: 80px;
           height: 43px;
-          background-image: url("/images/hero_ipad_caption_storage.png");
+          background-image: url("./../images/hero_ipad_caption_storage.png");
           transform: translate(627px, 631px);
         }
       }
@@ -594,7 +595,7 @@ main {
       width: 738px;
       height: 145px;
       margin: 0 auto;
-      background-image: url("/images/hero_headline.png");
+      background-image: url("./../images/hero_headline.png");
     }
 
     > p.pricing {
@@ -626,7 +627,7 @@ main {
     h1 {
       width: 500px;
       height: 280px;
-      background-image: url("/images/power_headline.png");
+      background-image: url("./../images/power_headline.png");
       transform: translate(104px, 0);
     }
 
@@ -637,7 +638,7 @@ main {
     figcaption {
       width: 138px;
       height: 46px;
-      background-image: url("/images/power_multiple_apps_caption.png");
+      background-image: url("./../images/power_multiple_apps_caption.png");
       transform: translate(703px, -47px);
     }
   }
@@ -654,7 +655,7 @@ main {
         figcaption {
           width: 150px;
           height: 77px;
-          background-image: url("/images/power_arcade_caption.png");
+          background-image: url("./../images/power_arcade_caption.png");
           transform: translate(483px, 653px);
         }
       }
@@ -673,7 +674,7 @@ main {
         figcaption {
           width: 142px;
           height: 46px;
-          background-image: url("/images/power_create_caption.png");
+          background-image: url("./../images/power_create_caption.png");
           transform: translate(543px, 908px);
         }
       }
@@ -690,7 +691,7 @@ main {
     h1 {
       width: 630px;
       height: 370px;
-      background-image: url("/images/display_headline.png");
+      background-image: url("./../images/display_headline.png");
       transform: translate(104px, 0);
     }
 
@@ -701,7 +702,7 @@ main {
       figcaption {
         width: 145px;
         height: 45px;
-        background-image: url("/images/display_notes_caption.png");
+        background-image: url("./../images/display_notes_caption.png");
         transform: translate(707px, -16px);
       }
     }
@@ -719,7 +720,7 @@ main {
         figcaption {
           width: 110px;
           height: 48px;
-          background-image: url("/images/display_shareplay_caption.png");
+          background-image: url("./../images/display_shareplay_caption.png");
           transform: translate(300px, 658px);
         }
       }
@@ -738,7 +739,7 @@ main {
     h1 {
       width: 650px;
       height: 450px;
-      background-image: url("/images/camera_headline.png");
+      background-image: url("./../images/camera_headline.png");
       transform: translate(-25px, 0);
     }
 
@@ -759,8 +760,8 @@ main {
           position: absolute;
           top: 36px;
           left: 76px;
-          -webkit-mask-image: url("/images/camera_video_mask.png");
-          mask-image: url("/images/camera_video_mask.png");
+          -webkit-mask-image: url("./../images/camera_video_mask.png");
+          mask-image: url("./../images/camera_video_mask.png");
         }
 
         .controller--play, .controller--pause {
@@ -785,7 +786,7 @@ main {
         figcaption {
           width: 130px;
           height: 110px;
-          background-image: url("/images/camera_hardware_caption.png");
+          background-image: url("./../images/camera_hardware_caption.png");
           transform: translate(-116px, 383px);
         }
       }
@@ -802,7 +803,7 @@ main {
         figcaption {
           width: 130px;
           height: 47px;
-          background-image: url("/images/camera_edit_caption.png");
+          background-image: url("./../images/camera_edit_caption.png");
           transform: translate(27px, 905px);
         }
       }
@@ -819,7 +820,7 @@ main {
     h1 {
       width: 730px;
       height: 330px;
-      background-image: url("/images/wireless_headline.png");
+      background-image: url("./../images/wireless_headline.png");
       transform: translate(104px, 0);
     }
 
@@ -832,7 +833,7 @@ main {
         figcaption {
           width: 139px;
           height: 46px;
-          background-image: url("/images/wireless_facetime_caption.png");
+          background-image: url("./../images/wireless_facetime_caption.png");
           transform: translate(843px, -49px);
         }
       }
@@ -846,7 +847,7 @@ main {
       figcaption {
         width: 127px;
         height: 46px;
-        background-image: url("/images/wireless_files_caption.png");
+        background-image: url("./../images/wireless_files_caption.png");
         transform: translate(96px, 639px);
       }
     }
@@ -861,7 +862,7 @@ main {
   h1 {
     width: 550px;
     height: 343px;
-    background-image: url("/images/accessibility_headline.png");
+    background-image: url("./../images/accessibility_headline.png");
     margin: 0 auto;
   }
 
@@ -876,14 +877,14 @@ main {
         .caption-memo {
           width: 169px;
           height: 41px;
-          background-image: url("/images/accessories_caption_memo.png");
+          background-image: url("./../images/accessories_caption_memo.png");
           transform: translate(790px, -52px);
         }
 
         .caption-supports {
           width: 200px;
           height: 70px;
-          background-image: url("/images/accessories_caption_supports.png");
+          background-image: url("./../images/accessories_caption_supports.png");
           transform: translate(163px, 821px);
         }
       }
@@ -906,7 +907,7 @@ main {
     width: 530px;
     height: 440px;
     margin: 0 auto;
-    background-image: url("/images/ipados_headline.png");
+    background-image: url("./../images/ipados_headline.png");
   }
 
   .infos {
@@ -928,7 +929,7 @@ main {
         figcaption {
           width: 163px;
           height: 53px;
-          background-image: url("/images/ipados_split_view_caption.png");
+          background-image: url("./../images/ipados_split_view_caption.png");
           transform: translate(200px, -38px);
         }
       }
@@ -940,7 +941,7 @@ main {
       figcaption {
         width: 163px;
         height: 53px;
-        background-image: url("/images/ipados_split_view_caption.png");
+        background-image: url("./../images/ipados_split_view_caption.png");
         transform: translate(200px, -38px);
       }
     }
@@ -951,7 +952,7 @@ main {
       figcaption {
         width: 161px;
         height: 46px;
-        background-image: url("/images/ipados_widgets_caption.png");
+        background-image: url("./../images/ipados_widgets_caption.png");
         transform: translate(257px, 497px);
       }
     }
@@ -962,7 +963,7 @@ main {
       figcaption {
         width: 82px;
         height: 97px;
-        background-image: url("/images/ipados_quick_note_caption.png");
+        background-image: url("./../images/ipados_quick_note_caption.png");
         transform: translate(511px, 470px);
       }
     }
@@ -977,7 +978,7 @@ main {
   h1 {
     width: 500px;
     height: 264px;
-    background-image: url("/images/apps_headline.png");
+    background-image: url("./../images/apps_headline.png");
     transform: translate(17px, 0);
   }
 
@@ -1002,7 +1003,7 @@ main {
         figcaption {
           width: 100px;
           height: 25px;
-          background-image: url("/images/apps_masterclass_caption.png");
+          background-image: url("./../images/apps_masterclass_caption.png");
           transform: translate(26px, 690px);
         }
       }
@@ -1015,7 +1016,7 @@ main {
         figcaption {
           width: 105px;
           height: 24px;
-          background-image: url("/images/apps_adobe_caption.png");
+          background-image: url("./../images/apps_adobe_caption.png");
           transform: translate(544px, 514px);
         }
       }
@@ -1028,7 +1029,7 @@ main {
         figcaption {
           width: 74px;
           height: 22px;
-          background-image: url("/images/apps_fantasian_caption.png");
+          background-image: url("./../images/apps_fantasian_caption.png");
           transform: translate(24px, 483px);
         }
       }
@@ -1041,7 +1042,7 @@ main {
         figcaption {
           width: 50px;
           height: 27px;
-          background-image: url("/images/apps_books_caption.png");
+          background-image: url("./../images/apps_books_caption.png");
           transform: translate(397px, 707px);
         }
       }
@@ -1054,7 +1055,7 @@ main {
         figcaption {
           width: 99px;
           height: 26px;
-          background-image: url("/images/apps_goodnotes_caption.png");
+          background-image: url("./../images/apps_goodnotes_caption.png");
           transform: translate(24px, 690px);
         }
       }
@@ -1071,7 +1072,7 @@ main {
     width: 482px;
     height: 237px;
     margin-left: auto;
-    background-image: url("/images/power_headline.png");
+    background-image: url("./../images/power_headline.png");
     position: relative;
     z-index: 1;
     transform: translate(57px, 0);
@@ -1091,14 +1092,14 @@ main {
       .caption-apple-id {
         width: 170px;
         height: 26px;
-        background-image: url("/images/privacy_caption_apple_id.png");
+        background-image: url("./../images/privacy_caption_apple_id.png");
         transform: translate(195px, -13px);
       }
 
       .caption-touch-id {
         width: 150px;
         height: 31px;
-        background-image: url("/images/privacy_caption_touch_id.png");
+        background-image: url("./../images/privacy_caption_touch_id.png");
         transform: translate(533px, 485px);
       }
     }
@@ -1114,7 +1115,7 @@ main {
   h1 {
     width: 382px;
     height: 270px;
-    background-image: url("/images/accessibility_headline.png");
+    background-image: url("./../images/accessibility_headline.png");
   }
 
   .infos {
@@ -1326,7 +1327,7 @@ footer {
     a.apple-logo {
       width: 16px;
       height: 16px;
-      background-image: url("/images/path_apple.svg");
+      background-image: url("./../images/path_apple.svg");
     }
     a:hover {
       text-decoration: underline;
@@ -1335,7 +1336,7 @@ footer {
       content: "";
       width: 8px;
       height: 18px;
-      background-image: url("/images/path_div.svg");
+      background-image: url("./../images/path_div.svg");
       position: absolute;
       top: 0;
       bottom: 0;
@@ -2381,7 +2382,7 @@ footer {
       h2 {
         width: 295px;
         height: 185px;
-        background-image: url("/images/hero_headline_mobile.png");
+        background-image: url("./../images/hero_headline_mobile.png");
       }
 
       .figures {
@@ -2399,7 +2400,7 @@ footer {
             .caption-camera {
               width: 180px;
               height: 37px;
-              background-image: url("/images/hero_ipad_caption_camera_mobile.png");
+              background-image: url("./../images/hero_ipad_caption_camera_mobile.png");
               transform: scale(1) translate(21px, 368px);
             }
 
@@ -2502,7 +2503,7 @@ footer {
       h1 {
         width: 290px;
         height: 308px;
-        background-image: url("/images/display_headline_mobile.png");
+        background-image: url("./../images/display_headline_mobile.png");
         transform: none;
         margin: 0 auto;
       }
@@ -2556,7 +2557,7 @@ footer {
       h1 {
         width: 304px;
         height: 350px;
-        background-image: url("/images/camera_headline_mobile.png");
+        background-image: url("./../images/camera_headline_mobile.png");
         margin: 0 auto;
       }
 
