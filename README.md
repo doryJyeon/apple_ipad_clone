@@ -6,16 +6,16 @@ HTML + SCSS + JavaScript 구성
 
 iPad, footer navigation 데이터를 JavaScript import 후 넣고 있어서 localhost 오픈 후 보셔야 제대로 보입니다.
 
-##구현 화면
+## 구현 화면
 ### Mobile
-![mobile-full](https://github.com/doryJyeon/apple_ipad_clone/assets/125242321/e5e0ad9b-cb6c-41c3-8e5e-d3da9e5cd3c0)
+![mobile](https://github.com/doryJyeon/apple_ipad_clone/assets/125242321/77493370-2938-4ddd-ad18-8fb3af1e7ece)
 
 #### menus click
-![click-menus](https://github.com/doryJyeon/apple_ipad_clone/assets/125242321/1a463d80-c0e9-4d42-8501-02c74a177634)
-![mobil-menu](https://github.com/doryJyeon/apple_ipad_clone/assets/125242321/e7cfd622-adc3-4178-bbca-56eb35cb19a8)
+![header-menu](https://github.com/doryJyeon/apple_ipad_clone/assets/125242321/0fef1b03-e644-4a84-9062-e634882a8cf2)
+![foot-menu](https://github.com/doryJyeon/apple_ipad_clone/assets/125242321/cd26b07e-ce9d-47d2-ae0b-3d525f8a9416)
 
 ### Tablet
-![tablet](https://github.com/doryJyeon/apple_ipad_clone/assets/125242321/2c4a5782-d0de-455e-b33f-887646679171)
+![tablet](https://github.com/doryJyeon/apple_ipad_clone/assets/125242321/6f3c2b0e-12dc-4932-8602-82ab0328e261)
 
 ### PC
-![pc-full](https://github.com/doryJyeon/apple_ipad_clone/assets/125242321/6609b370-d197-4a25-beea-d8d00fc67c06)
+![pc-full](https://github.com/doryJyeon/apple_ipad_clone/assets/125242321/9ef14ac7-a302-42ab-bf68-00be391d7a11)
