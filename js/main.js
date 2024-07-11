@@ -184,7 +184,7 @@ ipads.forEach((ipad) => {
     <p class="tagline">${ipad.tagline}</p>
     <p class="price">₩ ${ipad.price.toLocaleString("en-US")}부터</p>
     <button class="btn">구입하기</button>
-    <a href="${ipad.url}" class="link">더 알아보기</a>
+    <a href="#${ipad.url}" class="link">더 알아보기</a>
   `;
 
   itemsEl.append(itemEl);
@@ -198,7 +198,7 @@ navigations.forEach((nav) => {
   
   let mapList = "";
   nav.maps.forEach((list) => {
-    mapList += `<li><a href="${list.url}">${list.name}</a></li>`;
+    mapList += `<li><a href="#${list.url}">${list.name}</a></li>`;
   }); 
 
   // HTML
