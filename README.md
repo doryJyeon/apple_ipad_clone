@@ -2,9 +2,9 @@
 
 HTML + SCSS + JavaScript 구성
 
-반응형 사이트로 Pc, Tablet, Mobile 모두 지원합니다.
+Pc / Tablet / Mobile
 
-iPad, footer navigation 데이터를 JavaScript import 후 넣고 있어서 localhost 오픈 후 보셔야 제대로 보입니다.
+JavaScript import 이슈로 localhost 실행 후 보셔야 제대로 보입니다.
 
 ## 구현 화면
 ### Mobile
